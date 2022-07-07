@@ -1,0 +1,37 @@
+{
+    "mode": "one-day",
+    "setting-params": {
+        "seq_len": 22
+    },
+    "base-model": {
+        "model": "MLP",
+        "params": {
+            "l": 22,
+            "p": 1
+        }
+    },
+    "optimizer": {
+        "optim": "Adam",
+        "params": {
+            "lr": 0.01
+        }
+    },
+    "loss": {
+        "loss": "MSE"
+    },
+    "batch-size": 64,
+    "epochs": 100,
+    "source-folder": "Data//stock_data//data_for_teacher",
+    "target-folder": "Data//stock_data//data_for_student",
+    "source-domain": ["ACB", "BID", "BVH", "CTG", "FPT"],
+    "target-domain": "GVR",
+    "test-ratio": 0.3,
+    "transfer-params": {
+        "gamma": 0.01,
+        "params": {
+            "BETA": 0.1,
+            "SIGMA": 0.001,
+            "p": 1
+        }
+    }
+}
